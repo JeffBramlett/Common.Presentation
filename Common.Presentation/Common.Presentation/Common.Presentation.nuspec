@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.1</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://bluejaywebsvc.com/OpenSource/Common</projectUrl>
+    <iconUrl>https://bluejaywebsvc.com/images/bluejaylogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Minor modifications</releaseNotes>
+    <copyright>Copyright Jeffrey Bramlett 2019</copyright>
+    <tags>WPF,common,abstract</tags>
+  </metadata>
+</package>

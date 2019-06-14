@@ -34,6 +34,7 @@ namespace Common.Presentation
 
                 return _dialogProvider;
             }
+            set { _dialogProvider = value; }
         }
         #endregion
 
@@ -89,7 +90,7 @@ namespace Common.Presentation
         /// </summary>
         /// <typeparam name="M">the type for the command</typeparam>
         /// <param name="cmdExe">the delegate to execute when the command is raised</param>
-        /// <param name="canExecuteCmd">delegate to determine if the command can be executed/param>
+        /// <param name="canExecuteCmd">delegate to determine if the command can be executed</param>
         /// <returns>The ICommand object for binding</returns>
         protected ICommand CreateCommand<M>(Action<M> cmdExe, Func<M, bool> canExecuteCmd)
         {
