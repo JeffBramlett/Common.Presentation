@@ -41,19 +41,26 @@ namespace Common.Presentation
         void ShowMessageDialog(string title, string message);
 
         /// <summary>
-        /// Open a custom dialog (virtual method, base class implementation does nothing)
-        /// </summary>
-        /// <param name="keyName">the key for the dialog</param>
-        /// <param name="args">parameters for the dialog</param>
-        void OpenCustomDialog(string keyName, params object[] args);
-
-        /// <summary>
         /// Open a custom dialog (virtual method, base class implementation returns default of T)
         /// </summary>
         /// <typeparam name="T">The type of the object to return</typeparam>
         /// <param name="keyName">the key for the dialog</param>
         /// <param name="args">parameters for the dialog</param>
         /// <returns>Object of type T (default of T returned by base class)</returns>
-        T OpenCustomDialog<T>(string keyName, params object[] args);
+        object OpenCustomDialog(string keyName, params object[] args);
+
+        /// <summary>
+        /// Get the contents of a text file
+        /// </summary>
+        /// <param name="filename">the filename to open and get the contrents</param>
+        /// <returns></returns>
+        string GetTextFileContents(string filename);
+
+        /// <summary>
+        /// Save text content to a text file
+        /// </summary>
+        /// <param name="filename">the filename to use</param>
+        /// <param name="contents">the contents for the text file</param>
+        void SaveTextFileContents(string filename, string contents);
     }
 }

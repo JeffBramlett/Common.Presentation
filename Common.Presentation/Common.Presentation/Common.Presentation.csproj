@@ -61,11 +61,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="PropertyChangeObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.Presentation.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packandpush.cmd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

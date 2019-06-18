@@ -47,6 +47,7 @@ namespace Common.Presentation
             {
                 Filter = filePattern
             };
+
             if (ofd.ShowDialog().Value)
             {
                 return ofd.FileName;
@@ -78,25 +79,15 @@ namespace Common.Presentation
         }
 
         /// <summary>
-        /// Open a custom dialog (virtual method, base class implementation does nothing)
-        /// </summary>
-        /// <param name="keyName">the key for the dialog</param>
-        /// <param name="args">parameters for the dialog</param>
-        public virtual void OpenCustomDialog(string keyName, params object[] args)
-        {
-            
-        }
-
-        /// <summary>
         /// Open a custom dialog (virtual method, base class implementation returns default of T)
         /// </summary>
         /// <typeparam name="T">The type of the object to return</typeparam>
         /// <param name="keyName">the key for the dialog</param>
         /// <param name="args">parameters for the dialog</param>
         /// <returns>Object of type T (default of T returned by base class)</returns>
-        public virtual T OpenCustomDialog<T>(string keyName, params object[] args)
+        public virtual object OpenCustomDialog(string keyName, params object[] args)
         {
-            return default(T);
+            return null;
         }
 
         /// <summary>
@@ -108,6 +99,33 @@ namespace Common.Presentation
         {
             MessageBox.Show(message, title);
         }
+
+        /// <summary>
+        /// Get the contents of a text file
+        /// </summary>
+        /// <param name="filename">the filename to open and get the contrents</param>
+        /// <returns></returns>
+        public virtual string GetTextFileContents(string filename)
+        {
+            using (StreamReader sr = new StreamReader(filename))
+            {
+                return sr.ReadToEnd();
+            }
+        }
+
+        /// <summary>
+        /// Save text content to a text file
+        /// </summary>
+        /// <param name="filename">the filename to use</param>
+        /// <param name="contents">the contents for the text file</param>
+        public virtual void SaveTextFileContents(string filename, string contents)
+        {
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+                sw.Write(contents);
+            }
+        }
+
     }
 }
 
